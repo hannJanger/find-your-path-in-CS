@@ -87,6 +87,10 @@ button {
 
 /* Quiz card */
 
+#question:empty {
+    display: none;
+}
+
 #question {
     max-width: 600px;
     margin: 30px auto;

@@ -55,6 +55,19 @@ function discoverPath() {
     showQuestionOne();
 }
 
+function goToStart() {
+    const welcomeSection = document.querySelector('.welcome');
+    const questionSection = document.getElementById('question');
+
+    if (welcomeSection) {
+        welcomeSection.style.display = '';
+    }
+    if (questionSection) {
+        questionSection.innerHTML = '';
+    }
+    resetScores();
+}
+
 function chooseUnsure(questionKey, nextStepFn) {
     if (answers[questionKey] !== "unsure") {
         unsureCount++;
@@ -398,7 +411,7 @@ function showResult() {
         <p>${details}</p>
         <h3>You might enjoy</h3>
         <ul>${enjoy}</ul>
-        <button class="restart-btn" onclick="discoverPath()">Take the Test Again</button>
+        <button class="restart-btn" onclick="goToStart()">Take the Test Again</button>
     `;
 }
 
@@ -431,6 +444,6 @@ function showExploringResult() {
             Your path doesn't have to be decided today.
         </p>
 
-        <button class="restart-btn" onclick="discoverPath()">Explore Again</button>
+        <button class="restart-btn" onclick="goToStart()">Explore Again</button>
     `;
 }

@@ -99,6 +99,9 @@ button {
     border-radius: 20px;
     background: var(--cream);
     box-shadow: 0 6px 20px rgba(217, 167, 199, 0.28);
+}
+
+#question.fade-in {
     animation: fadeIn 0.35s ease;
 }
 

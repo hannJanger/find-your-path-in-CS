@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap');
 
 :root {
     --blush: #fce4ec;
@@ -13,7 +13,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #fce4ec, #fab8d9, #f8bbd0);
+    background: linear-gradient(160deg, #fce4ec, #fbc7dd);
     background-attachment: fixed;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
@@ -22,17 +22,11 @@ body {
     color: var(--text-mauve);
 }
 
-h1 {
-    font-family: 'Caveat', cursive;
-    font-size: 48px;
-    margin-top: 80px;
-}
-
 p {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--text-mauve);
     max-width: 600px;
-    margin: 20px auto;
+    margin: 18px auto;
     line-height: 1.6;
 }
 
@@ -41,46 +35,49 @@ button {
     color: white;
     border: none;
     padding: 14px 28px;
-    font-size: 17px;
+    font-size: 16px;
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
-    border-radius: 25px;
+    border-radius: 14px;
     cursor: pointer;
 }
 
 /* Welcome section */
 
 .welcome {
-    max-width: 650px;
-    margin: 50px auto;
-    padding: 35px;
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px 35px;
     text-align: center;
     background: var(--cream);
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(217, 167, 199, 0.35);
+    box-shadow: 0 6px 20px rgba(217, 167, 199, 0.28);
     animation: fadeIn 0.5s ease;
 }
 
 .welcome h1 {
-    font-size: 38px;
-    margin-bottom: 15px;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 44px;
+    margin: 0 0 16px;
+    color: var(--text-mauve);
 }
 
 .welcome button {
-    padding: 14px 25px;
-    border: none;
-    border-radius: 12px;
+    padding: 14px 26px;
+    border-radius: 14px;
     font-size: 16px;
-    cursor: pointer;
-    font-weight: 700;
-    background: var(--pink);
-    color: var(--text-mauve);
+    font-weight: 600;
+    background: var(--deep-pink);
+    color: white;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.welcome button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(217, 167, 199, 0.5);
+@media (hover: hover) and (pointer: fine) {
+    .welcome button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 14px rgba(217, 167, 199, 0.45);
+    }
 }
 
 .welcome button:focus-visible {
@@ -91,37 +88,43 @@ button {
 /* Quiz card */
 
 #question {
-    max-width: 650px;
+    max-width: 600px;
     margin: 30px auto;
-    padding: 30px;
+    padding: 34px 30px;
     text-align: center;
     border-radius: 20px;
     background: var(--cream);
-    box-shadow: 0 8px 25px rgba(217, 167, 199, 0.35);
-    animation: fadeIn 0.4s ease;
+    box-shadow: 0 6px 20px rgba(217, 167, 199, 0.28);
+    animation: fadeIn 0.35s ease;
 }
 
 #question h1 {
-    font-size: 36px;
-    margin: 20px 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
     font-weight: 700;
-    padding: 15px;
-    border-radius: 15px;
+    margin: 18px 0;
+    padding: 14px;
+    border-radius: 14px;
     background: var(--blush);
+    color: var(--text-mauve);
 }
 
 #question h2 {
-    font-family: 'Caveat', cursive;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 25px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.45;
+    margin: 0 0 24px;
     color: var(--text-mauve);
 }
 
 #question h3 {
-    font-family: 'Caveat', cursive;
-    font-size: 24px;
-    margin-top: 28px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 26px;
     color: var(--deep-pink);
 }
 
@@ -130,37 +133,33 @@ button {
 }
 
 #question > p:first-child {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
-    opacity: 0.6;
-    margin-bottom: 10px;
+    opacity: 0.55;
+    margin-bottom: 8px;
 }
 
 #question button {
     display: block;
     width: 90%;
     max-width: 450px;
-    margin: 12px auto;
-    padding: 15px 20px;
-    border: none;
+    margin: 10px auto;
+    padding: 14px 20px;
     border-radius: 14px;
-    cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     background: var(--pink);
     color: var(--text-mauve);
     position: relative;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
     #question button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 12px rgba(217, 167, 199, 0.5);
-        background: var(--deep-pink);
-        color: white;
+        box-shadow: 0 4px 14px rgba(217, 167, 199, 0.4);
     }
 }
 
@@ -172,17 +171,16 @@ button {
 #question button.selected {
     background: var(--deep-pink);
     color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 14px rgba(217, 167, 199, 0.6);
+    box-shadow: 0 4px 14px rgba(217, 167, 199, 0.5);
 }
 
 .limit-message {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--deep-pink);
     opacity: 0;
-    height: 20px;
-    margin: 8px auto;
+    height: 18px;
+    margin: 6px auto;
     transition: opacity 0.3s ease;
 }
 
@@ -192,32 +190,34 @@ button {
 
 #question ul {
     text-align: left;
-    max-width: 400px;
-    margin: 15px auto;
-    padding: 15px 15px 15px 35px;
+    max-width: 380px;
+    margin: 14px auto;
+    padding: 14px 14px 14px 32px;
     background: var(--blush);
     border-radius: 12px;
 }
 
 #question li {
-    margin: 10px 0;
+    margin: 8px 0;
+    font-size: 15px;
 }
 
 /* Restart button */
 
 .restart-btn {
-    margin-top: 25px !important;
-    font-weight: 700;
+    margin-top: 22px !important;
 }
 
 /* Footer */
 
 footer {
-    font-family: 'Caveat', cursive;
-    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
     text-align: center;
-    margin: 40px 0 20px;
-    opacity: 0.7;
+    margin: 36px 0 24px;
+    opacity: 0.55;
+    letter-spacing: 0.3px;
 }
 
 /* Entrance animation */
@@ -225,7 +225,7 @@ footer {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(8px);
     }
     to {
         opacity: 1;
@@ -239,28 +239,24 @@ footer {
     .welcome,
     #question {
         margin: 20px 15px;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 32px;
+        padding: 24px 20px;
     }
 
     .welcome h1 {
-        font-size: 28px;
+        font-size: 34px;
     }
 
     #question h1 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     #question h2 {
-        font-size: 22px;
+        font-size: 19px;
     }
 
     #question button {
         width: 100%;
-        font-size: 15px;
+        font-size: 14px;
         padding: 13px 16px;
     }
 }

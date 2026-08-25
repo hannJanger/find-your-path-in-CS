@@ -11,6 +11,14 @@ let unsureCount = 0;
 let answers = {};
 let q4Selections = [];
 
+function renderQuestion(html) {
+    const container = document.getElementById("question");
+    container.classList.remove("fade-in");
+    void container.offsetWidth; // force a reflow so the animation can restart
+    container.innerHTML = html;
+    container.classList.add("fade-in");
+}
+
 function setAnswer(question, choice) {
     if (answers[question] && answers[question] !== "unsure") {
         if (Array.isArray(answers[question])) {
@@ -63,6 +71,7 @@ function goToStart() {
         welcomeSection.style.display = '';
     }
     if (questionSection) {
+        questionSection.classList.remove('fade-in');
         questionSection.innerHTML = '';
     }
     resetScores();
@@ -79,7 +88,7 @@ function chooseUnsure(questionKey, nextStepFn) {
 /* QUESTION 1 */
 
 function showQuestionOne() {
-    document.getElementById("question").innerHTML = `
+    renderQuestion(`
         <p>Question 1 of 7</p>
 
         <h2>You're given a new project and complete freedom to decide what to do. What sounds most satisfying?</h2>
@@ -91,7 +100,7 @@ function showQuestionOne() {
         <button onclick="chooseQ1('cybersecurity')">Figuring out how to protect the system</button>
         <button onclick="chooseQ1('uiux')">Making the experience beautiful and easy to use</button>
         <button onclick="chooseUnsure('question1', showQuestionTwo)">I'm not sure yet — I'm still exploring</button>
-    `;
+    `);
 }
 
 function chooseQ1(choice) {
@@ -102,7 +111,7 @@ function chooseQ1(choice) {
 /* QUESTION 2 */
 
 function showQuestionTwo() {
-    document.getElementById("question").innerHTML = `
+    renderQuestion(`
         <p>Question 2 of 7</p>
 
         <h2>Imagine you could spend an entire afternoon learning one of these. Which would you choose?</h2>
@@ -115,7 +124,7 @@ function showQuestionTwo() {
         <button onclick="chooseQ2('uiux')">How to design digital experiences people love using</button>
         <button onclick="chooseUnsure('question2', showQuestionThree)">I'm not sure yet — I'm still exploring</button>
         <button onclick="showQuestionOne()">← Go Back</button>
-    `;
+    `);
 }
 
 function chooseQ2(choice) {
@@ -126,7 +135,7 @@ function chooseQ2(choice) {
 /* QUESTION 3 */
 
 function showQuestionThree() {
-    document.getElementById("question").innerHTML = `
+    renderQuestion(`
         <p>Question 3 of 7</p>
 
         <h2>You've built something, but it suddenly stops working. What would you most likely do first?</h2>
@@ -139,7 +148,7 @@ function showQuestionThree() {
         <button onclick="chooseQ3('web')">Test how it behaves across different devices or situations</button>
         <button onclick="chooseUnsure('question3', showQuestionFour)">I'm not sure yet — I'm still exploring</button>
         <button onclick="showQuestionTwo()">← Go Back</button>
-    `;
+    `);
 }
 
 function chooseQ3(choice) {
@@ -152,7 +161,7 @@ function chooseQ3(choice) {
 function showQuestionFour() {
     q4Selections = [];
 
-    document.getElementById("question").innerHTML = `
+    renderQuestion(`
         <p>Question 4 of 7</p>
 
         <h2>Which challenges would keep you curious the longest?</h2>
@@ -170,7 +179,7 @@ function showQuestionFour() {
         <button onclick="chooseQ4Unsure()">I'm not sure yet — I'm still exploring</button>
         <button onclick="submitQ4()">Continue</button>
         <button onclick="showQuestionThree()">← Go Back</button>
-    `;
+    `);
 }
 
 function toggleQ4(choice, button) {
@@ -227,7 +236,7 @@ function submitQ4() {
 /* QUESTION 5 */
 
 function showQuestionFive() {
-    document.getElementById("question").innerHTML = `
+    renderQuestion(`
         <p>Question 5 of 7</p>
 
         <h2>When you use a new app or website, what are you most likely to notice?</h2>
@@ -240,7 +249,7 @@ function showQuestionFive() {
         <button onclick="chooseQ5('uiux')">The layout, visuals, and overall experience</button>
         <button onclick="chooseUnsure('question5', showQuestionSix)">I'm not sure yet — I'm still exploring</button>
         <button onclick="showQuestionFour()">← Go Back</button>
-    `;
+    `);
 }
 
 function chooseQ5(choice) {
@@ -251,7 +260,7 @@ function chooseQ5(choice) {
 /* QUESTION 6 */
 
 function showQuestionSix() {
-    document.getElementById("question").innerHTML = `
+    renderQuestion(`
         <p>Question 6 of 7</p>
 
         <h2>You have the time and freedom to create one project. Which would you be most excited to show someone?</h2>
@@ -264,7 +273,7 @@ function showQuestionSix() {
         <button onclick="chooseQ6('uiux')">A digital product with an incredibly thoughtful user experience</button>
         <button onclick="chooseUnsure('question6', showQuestionSeven)">I'm not sure yet — I'm still exploring</button>
         <button onclick="showQuestionFive()">← Go Back</button>
-    `;
+    `);
 }
 
 function chooseQ6(choice) {
@@ -275,7 +284,7 @@ function chooseQ6(choice) {
 /* QUESTION 7 */
 
 function showQuestionSeven() {
-    document.getElementById("question").innerHTML = `
+    renderQuestion(`
         <p>Question 7 of 7</p>
 
         <h2>Which statement feels most like you?</h2>
@@ -288,7 +297,7 @@ function showQuestionSeven() {
         <button onclick="chooseQ7('uiux')">I care about how things look, feel, and make people experience them.</button>
         <button onclick="chooseUnsure('question7', showResult)">I'm not sure yet — I'm still exploring</button>
         <button onclick="showQuestionSix()">← Go Back</button>
-    `;
+    `);
 }
 
 function chooseQ7(choice) {
@@ -403,7 +412,7 @@ function showResult() {
         `;
     }
 
-    document.getElementById("question").innerHTML = `
+    renderQuestion(`
         <h2>Your strongest match is...</h2>
         <h1>${result}</h1>
         <p>${description}</p>
@@ -412,14 +421,14 @@ function showResult() {
         <h3>You might enjoy</h3>
         <ul>${enjoy}</ul>
         <button class="restart-btn" onclick="goToStart()">Take the Test Again</button>
-    `;
+    `);
 }
 
 /* STILL EXPLORING RESULT */
 
 function showExploringResult() {
 
-    document.getElementById("question").innerHTML = `
+    renderQuestion(`
         <h2>Your path is still unfolding...</h2>
         <h1>Still Exploring</h1>
 
@@ -445,5 +454,5 @@ function showExploringResult() {
         </p>
 
         <button class="restart-btn" onclick="goToStart()">Explore Again</button>
-    `;
+    `);
 }

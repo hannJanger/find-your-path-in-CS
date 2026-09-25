@@ -21,4 +21,4 @@ The quiz includes simple questions about interests and preferences and provides 
 
 ## Live Website
 
-[View the Website](PASTE-YOUR-GITHUB-PAGES-LINK-HERE)
+[View the Website](https://hannjanger.github.io/find-your-path-in-CS/)
